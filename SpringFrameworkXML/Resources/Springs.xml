@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+
+    <bean id="student" class="org.genspark.spring.framework.context.assignmentXML.Student">
+        <property name="id" value="4568822"/>
+        <property name="name" value="Robert Kowalczyk"/>
+        <property name="ph">
+            <list>
+                <ref bean="phone"/>
+                <ref bean="cellphone"/>
+                <ref bean="workphone"/>
+            </list>
+        </property>
+        <property name="add" ref="address"/>
+    </bean>
+    <bean id="phone" class="org.genspark.spring.framework.context.assignmentXML.Phone">
+        <property name="mob" value="8628756699" />
+    </bean>
+    <bean id="homephone" class="org.genspark.spring.framework.context.assignmentXML.Phone">
+        <property name="mob" value="8602687744"/>
+    </bean>
+    <bean id="cellphone" class="org.genspark.spring.framework.context.assignmentXML.Phone">
+        <property name="mob" value="8609705555"/>
+    </bean>
+    <bean id="workphone" class="org.genspark.spring.framework.context.assignmentXML.Phone">
+        <property name="mob" value="2039875566"/>
+    </bean>
+    <bean id="fax" class="org.genspark.spring.framework.context.assignmentXML.Phone">
+        <property name="mob" value="2035544778"/>
+    </bean>
+
+    <bean id="address" class="org.genspark.spring.framework.context.assignmentXML.Address">
+        <property name="city" value="East Hampton"/>
+        <property name="state" value="CT"/>
+        <property name="country" value="USA"/>
+        <property name="zipcode" value="06424"/>
+    </bean>
+
+</beans>
