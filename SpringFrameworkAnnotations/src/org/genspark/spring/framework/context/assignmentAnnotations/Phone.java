@@ -1,12 +1,20 @@
 package org.genspark.spring.framework.context.assignmentAnnotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Phone {
-    @Value("555-564-8989")
     private String mob;
+
+    public Phone(){
+        mob = "";
+    }
+
+    public Phone(String mob) {
+        this.mob = mob;
+    }
 
     public String getMob() {
         return mob;

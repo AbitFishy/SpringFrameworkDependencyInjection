@@ -46,6 +46,12 @@ public class Student {
     @Value("John Doe")
     private String name;
     @Autowired
+    @Value("#{{" +
+            "new org.genspark.spring.framework.context.assignmentAnnotations.Phone('123-856-8965')," +
+            "new org.genspark.spring.framework.context.assignmentAnnotations.Phone('185-456-8755')," +
+            "new org.genspark.spring.framework.context.assignmentAnnotations.Phone('123-856-8965')" +
+            "}}")
+
     private List<Phone> ph;
     @Autowired
     private Address address;
