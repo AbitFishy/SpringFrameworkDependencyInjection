@@ -1,25 +1,29 @@
-package org.genspark.spring.framework.context.assignmentXML;
+package org.genspark.spring.framework.context.assignmentAnnotations;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Address {
+    @Value("Hartford")
     private String city;
+    @Value("CT")
     private String state;
+    @Value("USA")
     private String country;
+    @Value("90210")
     private String zipcode;
 
     public String getCity() {
         return city;
     }
-    public void setCity(@Value("Hartford") String city) {
+    public void setCity( String city) {
         this.city = city;
     }
     public String getCountry() {
         return country;
     }
-    public void setCountry(@Value("USA") String country) {
+    public void setCountry( String country) {
         this.country = country;
     }
 
@@ -37,7 +41,7 @@ public class Address {
         return state;
     }
 
-    public void setState(@Value("CT") String state) {
+    public void setState( String state) {
         this.state = state;
     }
 
@@ -45,7 +49,7 @@ public class Address {
         return zipcode;
     }
 
-    public void setZipcode(@Value("90210") String zipcode) {
+    public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
 }

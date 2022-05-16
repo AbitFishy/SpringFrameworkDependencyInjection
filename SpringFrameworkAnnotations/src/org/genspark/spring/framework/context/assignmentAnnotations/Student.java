@@ -1,4 +1,4 @@
-package org.genspark.spring.framework.context.assignmentXML;
+package org.genspark.spring.framework.context.assignmentAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,7 +13,7 @@ public class Student {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-//                ", phoneNumbers=" + ph +
+                ", ph=" + ph +
                 ", address=" + address +
                 '}';
     }
@@ -46,7 +46,6 @@ public class Student {
     @Value("John Doe")
     private String name;
     @Autowired
-    @Qualifier("phoneList")
     private List<Phone> ph;
     @Autowired
     private Address address;
